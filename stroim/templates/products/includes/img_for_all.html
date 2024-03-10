@@ -1,0 +1,6 @@
+{% load thumbnail %}
+<article>
+  {% thumbnail products.image "1080x444" crop="center" upscale=True as im %}
+  <img class="card-image" src="{{ im.url }}">
+</article>
+{% endthumbnail %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block content %}
+            {% for products in page_obj %}
+                <div class='card'>
+                    {% if products.image %}
+                        <img class="card-image" src="{{ products.image.url }}">
+                    {% endif %}
+                        <br>
+                    <h3 class='card-title'>
+                        {{products.name}}
+                    </h3>
+                        <br>
+                    <p class='card-text'>
+                        {{products.cost}}
+                    </p>
+            {% endfor %}
+        </div>
+    
+
+    {% include 'products/includes/paginator.html' %}
+{% endblock %}

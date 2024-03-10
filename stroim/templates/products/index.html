@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+  <div>
+    <main>
+      <section>
+
+        <div class="text-info-left">
+
+        <h3 class="text-info-title"> Добро пожаловать в наш Строительный магазин!</h3>
+
+      Мы предоставляем широкий ассортимент товаров для строительства, ремонта и обустройства вашего дома.
+      В нашем магазине вы найдете высококачественные стройматериалы, инструменты, аксессуары и многое другое.
+      Будьте уверены, что в нашем магазине вы найдете все необходимое для успешного строительства и ремонта. Оставайтесь с нами, и ваш дом станет местом комфорта и безопасности!
+        </div>
+
+      <div class="text-info-right">
+
+        <h3 class="text-info-title"> Наши преимущества:</h3>
+        <ul>
+          <li>Широкий выбор товаров: От фундамента до крыши – у нас есть все необходимое для вашего строительства.</li>
+          <li>Качественные материалы: Мы сотрудничаем с надежными поставщиками, чтобы предоставить вам продукцию высокого качества.</li>
+          <li>Доступные цены: Мы заботимся о вашем бюджете и предлагаем конкурентоспособные цены на все товары.</li>
+          <li>Профессиональные консультации: Наши эксперты всегда готовы поделиться знаниями и помочь вам выбрать оптимальные решения.</li>
+        </ul>
+  
+      </div>
+      </section>
+      <div class="text-info">Начните свое строительное приключение прямо сейчас!</div>
+
+      <div class="wrapper">
+        <input type="radio" name="point" id="slide1" checked>
+        <input type="radio" name="point" id="slide2">
+        <input type="radio" name="point" id="slide3">
+        <input type="radio" name="point" id="slide4">
+        <input type="radio" name="point" id="slide5">
+        <div class="slider">
+          <div class="slides slide1"></div>
+          <div class="slides slide2"></div>
+          <div class="slides slide3"></div>
+          <div class="slides slide4"></div>
+          <div class="slides slide5"></div>
+        </div>	
+        <div class="controls">
+          <label for="slide1"></label>
+          <label for="slide2"></label>
+          <label for="slide3"></label>
+          <label for="slide4"></label>
+          <label for="slide5"></label>
+        </div>
+      </div>
+
+
+      <div class="content">
+        <div class="card">
+          <img
+            class="card-image"
+            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/174086.jpg"
+            alt="Неоновые лампочки в виде символов светятся красным"
+          />
+          <h3 class="card-title">Цемент и нерудные материалы</h3>
+          <p class="card-text">
+            400 рублей.
+          </p>
+        </div>
+        <div class="card no-right-margin">
+          <img
+            class="card-image"
+            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/169714.jpg"
+            alt="Разметка теннисного корта крупным планом"
+          />
+          <h3 class="card-title">Обои для стен</h3>
+          <p class="card-text">
+            800 рублей.
+          </p>
+        </div>
+        <div class="card">
+          <img
+            class="card-image"
+            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/175734.jpg"
+          />
+          <h3 class="card-title">Пиломатериалы и столярные изделия</h3>
+          <p class="card-text">
+            1200 рублей
+          </p>
+        </div>
+        <div class="card no-right-margin">
+          <img
+            class="card-image"
+            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/9588.jpg"
+          />
+          <h3 class="card-title">Строительная химия</h3>
+          <p class="card-text">
+            1500 рублей.
+          </p>
+        </div>
+      </div>
+      <section class="text_all"><a href="#">Просмотреть все товары</a></section>
+  </main>
+  </div>
+</body>
+{% endblock %}
