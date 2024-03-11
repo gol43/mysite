@@ -2,52 +2,35 @@
 {% load static %}
 {% load thumbnail %}
 {% block content %}
-<div class="lists">
-    <!-- Карточка товара -->
-    <div class="list">
-        <!-- Верхняя часть -->
-        <div class="list__top">
-        <!-- Изображение-ссылка товара -->
-        <a href="#" class="list__image">
-            <img
-            src="static/img/pin1.png"
-            alt="Apple IPhone 14 PRO Max Gold"
-            />
-        </a>
-        <!-- Скидка на товар -->
-        <div class="list__label">-10%</div>
-        </div>
-        <!-- Нижняя часть -->
-        <div class="list__bottom">
-        <!-- Цены на товар (с учетом скидки и без)-->
-        <div class="card__prices">
-            <div class="list__price list__price--discount">135 000</div>
-            <div class="list__price list__price--common">150 000</div>
-        </div>
-        <!-- Ссылка-название товара -->
-        <a href="#" class="list__title">
-            Смартфон Apple IPhone 14 Pro Max 256Gb, золотой
-        </a>
-        <!-- Кнопка добавить в корзину -->
-        <button class="list__add">В корзину</button>
-        </div>
-    </div>
-</div>
+    <div class="container">
+        <main class="lists">
             {% for products in page_obj %}
-                <div class='card'>
-                    {% if products.image %}
-                        <img class="card-image" src="{{ products.image.url }}">
-                    {% endif %}
-                        <br>
-                    <h3 class='card-title'>
-                        {{products.name}}
-                    </h3>
-                        <br>
-                    <p class='card-text'>
-                        {{products.cost}}
-                    </p>
+                <div class="list">
+                    <!-- Карточка товара -->
+                    <!-- Верхняя часть -->
+                    <div class="list__top">
+                        <!-- Изображение-ссылка товара -->
+                        <a href="#" class="list__image">
+                            <img src="{{ products.image.url }}">
+                        </a>
+                    </div>
+                    <!-- Нижняя часть -->
+                    <div class="list__bottom">
+                        <!-- Цены на товар (с учетом скидки и без)-->
+                        <div class="list__prices">
+                            <div class="list__price">{{products.cost}}</div>
+                        </div>
+                        <!-- Ссылка-название товара -->
+                        <a href="#" class="list__title">
+                            {{products.name}}
+                        </a>
+                        <!-- Кнопка добавить в корзину -->
+                        <button class="list__add">В корзину</button>
+                    </div>
+                </div>
             {% endfor %}
-        </div>
-
-    {% include 'products/includes/paginator.html' %}
+        </main>
+        <!-- Pagination -->
+        {% include 'products/includes/paginator.html' %}
+    </div>
 {% endblock %}

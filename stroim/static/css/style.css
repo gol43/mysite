@@ -9,23 +9,49 @@
 }
 
 
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: white;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  margin-top: 100px;
 }
 
 header {
+  top: 0;
   background-color: rgb(12, 178, 244);
   height: 100px;
   width: 100%;
   box-shadow: -10px 5px 6px #0160a3;
   display: flex;
   align-items: center;
-  z-index: 3; /* Назначаем высокий z-index для header */
-  position: fixed;
 }
+
+.over {
+  overflow: hidden;
+
+}
+main {
+  overflow: auto;
+  width: 100%;
+  flex: 1;
+  transition: margin 0.5s;
+}
+
+
+
+
+
+
+
 .img-logo {
   display: flex;
   margin: auto;
@@ -156,7 +182,6 @@ text-decoration: none;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
-  margin-top: 100px;
   display: block;
   position: relative;
 }
@@ -359,7 +384,6 @@ position: relative;
 .card__top {
 flex: 0 0 220px;
 position: relative;
-overflow: hidden;
 transition: background-color 0.3s ease;
 }
 
@@ -514,20 +538,201 @@ margin-left: 225%;
 
 
 
-.footer {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position:relative;
+  padding-bottom:50px;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.list {
+  width: 225px;
+  flex-basis: 250px;
+  height: 400px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  position: relative;
+}
+
+.list__top {
+  flex: 0 0 220px;
+  position: relative;
+}
+
+.list__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: -30%;
+}
+
+.list__image > img {
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.2s;
+}
+
+.list__image:hover > img {
+  transform: scale(1.1);
+}
+
+.list__bottom {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  padding: 10px;
+}
+
+.list__prices {
+  display: flex;
+  margin-bottom: -10%; /* Уменьшаем расстояние */
+  flex: 0 0 50%;
+  font-size: 20px;
+}
+
+.list__title {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 5px; /* Уменьшаем расстояние */
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+  color: #434242;
+}
+
+.list__title:hover {
+  color: #2f92cb;
+}
+
+.list__add {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #70c05b;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.list__add:hover {
+  border: 2px solid #131adc;
+  background-color: #0a74f5;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+.pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #fff; /* Optional: Set a background color */
+  padding: 10px;
+}
+
+
+
+.pagination li {
+  list-style: none;
+  margin: 0 5px;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-family: 'Arial', sans-serif; /* Укажите желаемый шрифт */
+  font-size: 14px;
+}
+
+.pagination a:hover {
+  background-color: #f5f5f5;
+}
+
+.pagination .active span {
+  background-color: #007bff;
+  color: #fff;
+  cursor: default;
+}
+
+.pagination .disabled a,
+.pagination .disabled span {
+  color: #999;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+
+
+
+
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
   max-height: 200px;
   min-height: 100px;
   height: 150px;
   display: flex;
   height: 200px;
   background-color: rgb(12, 178, 244);
-  margin-top: auto;
-  background-position: bottom;
+  background-position: center;
   padding: 10px;
-  margin-bottom: 0;
-  margin-bottom: auto;
-  margin: auto;
 }
+
 .footer-cop{
   padding: 10px;
   width: 300px;

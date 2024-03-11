@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Product
 from .utils import paginate
 
-PAGE_FOR_LIST = 4
+PAGE_FOR_LIST = 8
 
 def index(request):
     template = 'products/index.html'
