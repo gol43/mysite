@@ -1,32 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <body>
-  <div>
+  <div class="full-body">
     <main>
       <section>
 
-        <div class="text-info-left">
-
-        <h3 class="text-info-title"> Добро пожаловать в наш Строительный магазин!</h3>
+        <div class="text-info-left"> 
+<!-- Добро пожаловать в наш Строительный магазин! -->
+        <h3 class="text-info-title"> Добро пожаловать в наш Строительный магазин! </h3>
 
       Мы предоставляем широкий ассортимент товаров для строительства, ремонта и обустройства вашего дома.
-      В нашем магазине вы найдете высококачественные стройматериалы, инструменты, аксессуары и многое другое.
-      Будьте уверены, что в нашем магазине вы найдете все необходимое для успешного строительства и ремонта. Оставайтесь с нами, и ваш дом станет местом комфорта и безопасности!
+      В нашем магазине вы найдете высококачественные стройматериалы, инструменты, аксессуары и многое другое.<br><br>
+      Будьте уверены, что в нашем магазине вы найдете все необходимое для успешного строительства и ремонта.
         </div>
-
-      <div class="text-info-right">
-
-        <h3 class="text-info-title"> Наши преимущества:</h3>
-        <ul>
-          <li>Широкий выбор товаров: От фундамента до крыши – у нас есть все необходимое для вашего строительства.</li>
-          <li>Качественные материалы: Мы сотрудничаем с надежными поставщиками, чтобы предоставить вам продукцию высокого качества.</li>
-          <li>Доступные цены: Мы заботимся о вашем бюджете и предлагаем конкурентоспособные цены на все товары.</li>
-          <li>Профессиональные консультации: Наши эксперты всегда готовы поделиться знаниями и помочь вам выбрать оптимальные решения.</li>
-        </ul>
   
       </div>
       </section>
-      <div class="text-info">Начните свое строительное приключение прямо сейчас!</div>
 
       <div class="wrapper">
         <input type="radio" name="point" id="slide1" checked>
@@ -50,53 +40,178 @@
         </div>
       </div>
 
+      <div class="card-text">Наши товары</div>
+      <section>
+          <div class="cards">
+                <!-- Карточка товара 1-->
+                <div class="card">
+                  <!-- Верхняя часть -->
+                  <div class="card__top">
+                    <!-- Изображение-ссылка товара -->
+                    <a href="#" class="card__image">
+                      <img src="pin1.png">
+                    </a>
+                    <a href="#" class='card_fon' >
+                      <img src="1.png" alt="">
+                    </a>
+                  </div>
+                  <!-- Нижняя часть -->
+                  <div class="card__bottom">
+                    <div class="create-line1"></div>
+                    <!-- Цены на товар (с учетом скидки и без)-->
+                    <!-- Ссылка-название товара -->
+                    <a href="#" class="card__title">
+                      Инструменты
+                    </a>
+                    <!-- Кнопка добавить в корзину -->
+                  </div>
+                </div>
 
-      <div class="content">
-        <div class="card">
-          <img
-            class="card-image"
-            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/174086.jpg"
-            alt="Неоновые лампочки в виде символов светятся красным"
-          />
-          <h3 class="card-title">Цемент и нерудные материалы</h3>
-          <p class="card-text">
-            400 рублей.
-          </p>
-        </div>
-        <div class="card no-right-margin">
-          <img
-            class="card-image"
-            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/169714.jpg"
-            alt="Разметка теннисного корта крупным планом"
-          />
-          <h3 class="card-title">Обои для стен</h3>
-          <p class="card-text">
-            800 рублей.
-          </p>
-        </div>
-        <div class="card">
-          <img
-            class="card-image"
-            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/175734.jpg"
-          />
-          <h3 class="card-title">Пиломатериалы и столярные изделия</h3>
-          <p class="card-text">
-            1200 рублей
-          </p>
-        </div>
-        <div class="card no-right-margin">
-          <img
-            class="card-image"
-            src="https://cdn.vseinstrumenti.ru/imgtmbnf/202x152/img/cats_tale/9588.jpg"
-          />
-          <h3 class="card-title">Строительная химия</h3>
-          <p class="card-text">
-            1500 рублей.
-          </p>
-        </div>
-      </div>
-      <section class="text_all"><a href="#">Просмотреть все товары</a></section>
+                <!-- Карточка товара 2-->
+                <div class="card">
+                  <!-- Верхняя часть -->
+                  <div class="card__top">
+                    <!-- Изображение-ссылка товара -->
+                    <a href="#" class="card__image">
+                      <img
+                        src="pin2.png"
+                      />
+                      <a href="#" class='card_fon' >
+                        <img src="2.png" alt="">
+                      </a>
+                    </a>
+                  </div>
+                  <!-- Нижняя часть -->
+                  <div class="card__bottom">
+                    <div class="create-line2"></div>
+                    <!-- Цены на товар (с учетом скидки и без)-->
+                    <!-- Ссылка-название товара -->
+                    <a href="#" class="card__title">
+                      Краска
+                    </a>
+                    <!-- Кнопка добавить в корзину -->
+                  </div>
+                </div>
+
+                <!-- Карточка товара 3-->
+                <div class="card">
+                  <!-- Верхняя часть -->
+                  <div class="card__top">
+                    <!-- Изображение-ссылка товара -->
+                    <a href="#" class="card__image">
+                      <img
+                        src="pin3.png"
+                      />
+                      <a href="#" class='card_fon' >
+                        <img src="3.png" alt="">
+                      </a>
+                    </a>
+                  </div>
+                  <!-- Нижняя часть -->
+                  <div class="card__bottom">
+                    <div class="create-line3"></div>
+                    <!-- Цены на товар (с учетом скидки и без)-->
+                    <!-- Ссылка-название товара -->
+                    <a href="#" class="card__title">
+                      Электротовары
+                    </a>
+                    <!-- Кнопка добавить в корзину -->
+                  </div>
+                </div>
+              
+                            <!-- Карточка товара 4-->
+                <div class="card">
+                  <!-- Верхняя часть -->
+                  <div class="card__top">
+                    <!-- Изображение-ссылка товара -->
+                    <a href="#" class="card__image">
+                      <img
+                        src="pin4.png"
+                      />
+                      <a href="#" class='card_fon' >
+                        <img src="4.png" alt="">
+                      </a>
+                    </a>
+                  </div>
+                  <!-- Нижняя часть -->
+                  <div class="card__bottom">
+                    <div class="create-line4"></div>
+                    <!-- Цены на товар (с учетом скидки и без)-->
+                    <!-- Ссылка-название товара -->
+                    <a href="#" class="card__title">
+                      Болты
+                    </a>
+                    <!-- Кнопка добавить в корзину -->
+                  </div>
+                </div>
+
+                            <!-- Карточка товара 5-->
+                <div class="card5">
+                  <div class="card">
+                    <!-- Верхняя часть -->
+                    <div class="card__top">
+                      <!-- Изображение-ссылка товара -->
+                      <a href="#" class="card__image">
+                        <img
+                          src="pin5.png"
+                        />
+                        <a href="#" class='card_fon' >
+                          <img src="5.png" alt="">
+                        </a>
+                      </a>
+                    </div>
+                    <!-- Нижняя часть -->
+                    <div class="card__bottom">
+                      <div class="create-line5"></div>
+                      <!-- Цены на товар (с учетом скидки и без)-->
+                      <!-- Ссылка-название товара -->
+                      <a href="#" class="card__title">
+                        Всё для сада
+                      </a>
+                      <!-- Кнопка добавить в корзину -->
+                    </div>
+                  </div>
+              </div>
+                            <!-- Карточка товара 6-->
+                <div class="card5">
+                  <div class="card">
+                    <!-- Верхняя часть -->
+                    <div class="card__top">
+                      <!-- Изображение-ссылка товара -->
+                      <a href="#" class="card__image">
+                        <img
+                          src="pin6.png"
+                        />
+                        <a href="#" class='card_fon' >
+                          <img src="6.png" alt="">
+                        </a>
+                      </a>
+                    </div>
+                    <!-- Нижняя часть -->
+                    <div class="card__bottom">
+                      <div class="create-line6"></div>
+                      <!-- Цены на товар (с учетом скидки и без)-->
+                      <!-- Ссылка-название товара -->
+                      <a href="#" class="card__title">
+                        Обои
+                      </a>
+                      <!-- Кнопка добавить в корзину -->
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </section>
+
+
+
+  <div class="text_all"><a href="#">Просмотреть все товары..</a></div>
   </main>
   </div>
 </body>
+
+
+<footer class="footer">
+  <h4 class="footer-author">Я х ОПТИМУС ПРАЙМ</h4>
+  <p class="footer-cop">© 2024 Copyright <span style="color:rgb(12, 20, 240)">Строй</span>Балт</p>
+</footer>
 {% endblock %}

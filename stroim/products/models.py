@@ -19,7 +19,7 @@ class Product(models.Model):
         'Картинка',
         upload_to='products/',
         blank=True
-    )  
+    )
     amount = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 

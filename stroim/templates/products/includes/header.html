@@ -1,22 +1,25 @@
 {% load static %}
 <header>
-    <img src="{% static 'img/logo.png' %}" width="80" height="85" alt="Логотип сайта">
-    <a href=''><h1 class='logo'>СтройБалт</h1></a>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <form action="">
-      <input type="search">
-      <i class="fa fa-search"></i>
-    </form>
+  <img class='img-logo'src="static/img/logo.png" width="90" height="85" alt="Логотип сайта">
+  <a class='logo' href=''><h1>СтройБалт</h1></a>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <form class='poisk' action="">
+    <input type="search">
+    <i class="fa fa-search"></i>
+  </form>
 
-    <nav>
-      <ul>
-        <li> <a href="#">Каталог</a>
-          <ul>
-            <li><a href="#">Товары для дома</a></li>
-            <li><a href="#">Товары для сада</a></li>
-            <li><a href="#">Электротовары</a></li>
-          </ul> 
-        </li>
-      </ul>
-    </nav>
+  <nav class="catalog">
+    <ul>
+      <li class="text-catalog"> <a href="#">Каталог</a>
+        <ul>
+          <li><a href="#">Товары для дома</a></li>
+          <li><a href="#">Товары для сада</a></li>
+          <li><a href="#">Электротовары</a></li>
+        </ul> 
+      </li>
+    </ul>
+  </nav>
+
+  <div class="auth"><a href="#">Войти</a></div>
+
 </header>
