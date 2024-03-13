@@ -12,9 +12,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    name = models.TextField()
+    name = models.TextField(max_length=50)
     cost = models.PositiveIntegerField()
-    description = models.TextField()
+    description = models.TextField(max_length=500)
     image = models.ImageField(
         'Картинка',
         upload_to='products/',
@@ -52,7 +52,7 @@ class Comment(models.Model):
         related_name='author',)
 
     text = models.TextField(
-        max_length=200,)
+        max_length=500)
 
     created = models.DateTimeField(
         verbose_name='Дата коммента',

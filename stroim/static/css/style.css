@@ -568,12 +568,13 @@ margin-left: 225%;
   max-width: 1000px;
   margin: 0 auto;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .list {
-  width: 225px;
+  width: 215px;
   flex-basis: 250px;
-  height: 400px;
+  height: 450px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -582,6 +583,8 @@ margin-left: 225%;
 }
 
 .list__top {
+  background-color: #007bff;
+  background-size: contain;
   flex: 0 0 220px;
   position: relative;
 }
@@ -600,7 +603,7 @@ margin-left: 225%;
   margin-bottom: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;	
   transition: 0.2s;
 }
 
@@ -609,11 +612,12 @@ margin-left: 225%;
 }
 
 .list__bottom {
-  align-items: center;
+  align-items: flex-start; /* Изменено на flex-start */
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
   padding: 10px;
+  position: relative; /* Добавлено */
 }
 
 .list__prices {
@@ -626,7 +630,7 @@ margin-left: 225%;
 .list__title {
   display: block;
   margin-top: 0;
-  margin-bottom: 5px; /* Уменьшаем расстояние */
+  margin-bottom: 20px; /* Увеличено расстояние до кнопки добавления */
   font-weight: 400;
   font-size: 17px;
   line-height: 150%;
@@ -638,6 +642,8 @@ margin-left: 225%;
 }
 
 .list__add {
+  position: absolute; /* Добавлено */
+  bottom: 0; /* Добавлено */
   display: block;
   width: 100%;
   font-weight: 400;
@@ -665,6 +671,7 @@ margin-left: 225%;
 
 
 .pagination {
+  margin-top: 10px;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -713,6 +720,283 @@ margin-left: 225%;
   pointer-events: none;
   cursor: default;
 }
+
+
+
+
+
+
+
+
+
+/* Страница продукта */
+.pro {
+  display: flex;
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+}
+
+
+.pro_image {
+  display: flex;
+  width: 550px;
+  height: 550px;
+  margin-left: 100px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  border: 2px solid black;
+  box-shadow: 10px 10px 8px #0160a3;
+  object-fit: cover;
+}
+.pro_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.pro_list {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  margin-top: 150px;
+  transform: translateX(0%);
+  margin-bottom: 250px; /* Добавлено для компенсации высоты кнопки */
+}
+
+
+.pro_name,
+.pro_cost,
+.pro_category,
+.pro_amount {
+  /* Общие стили для элементов списка */
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+.opi {
+  font-size: 40px;
+  margin-left: 50px;
+}
+.pro_description {
+  width: 95%; /* Задаем ширину */
+  height: 50%; /* Задаем высоту */
+  margin-left: 50px; /* Добавляем отступ слева для выравнивания */
+  color: rgb(64, 64, 64);
+  font-size: 20px;
+  font-weight: 100;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ol {
+  list-style-type:none;
+}
+
+.com {
+  
+  font-weight: 900;
+  color: rgb(64, 64, 64);
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  align-items: center; /* Центрируем содержимое по вертикали */
+  margin-top: 50px;
+  font-size: 30px;
+  text-align: center; /* Выравниваем текст по центру */
+}
+.comments {
+  padding: 20px;
+  background-color: white;
+  width: 99.5%;
+  margin-bottom: 30px;
+  margin-left: auto; /* Чтобы выровнять комментарии по центру */
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-right: auto; /* Чтобы выровнять комментарии по центру */
+  border: 2px solid black;
+  box-sizing: border-box; /* Учтем толщину границы в ширине блока */
+  word-wrap: break-word; /* Разбиваем текст на новую строку, если он слишком длинный */
+}
+
+.line-comment {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.author-comment {
+  font-size: 30px;
+  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(64, 64, 64);
+}
+
+.text-comment {
+  font-size: 20px;
+  font-weight: 100;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(64, 64, 64);
+}
+.pub_date_comment {
+  font-size: 20px;
+  font-weight: 900;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(64, 64, 64);
+}
+/* Страница продукта */
+.comment_add {
+  margin-top: 25px;
+  margin-bottom: 35px;
+  margin-left: 10px;
+  margin-right: 5px;
+  bottom: 0;
+  display: block;
+  width: 99.5%;
+  font-weight: 400;
+  font-size: 25px;
+  color: #0a74f5;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #0a74f5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.comment_add:hover {
+  border: 2px solid #70c05b;
+  background-color: #70c05b;
+  color: #fff;
+}
+
+
+
+.add_com {
+  display: flex;
+  margin: auto;
+  margin-top: 100px;
+  height: 500px;
+}
+.decor {
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 800px;
+  margin: 50px auto 0;
+  background-color: rgb(12, 178, 244, 0.4);
+  border: 2px solid black;
+  border-radius: 30px;
+  width: 100%; /* Занимает всю доступную ширину */
+  height: 100%; /* Занимает всю доступную высоту */
+}
+
+.form-left-decoration, .form-right-decoration {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  background: #07f25d;
+  border-radius: 20px;
+}
+.form-left-decoration {
+  bottom: 60px;
+  left: -30px;
+}
+.form-right-decoration {
+  top: 60px;
+  right: -30px;
+}
+.form-left-decoration:before, .form-left-decoration:after, .form-right-decoration:before, .form-right-decoration:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 30px;
+  background: rgb(7, 85, 253);
+}
+.form-left-decoration:before {
+  top: -20px;
+}
+.form-left-decoration:after {
+  top: 20px;
+  left: 10px;
+}
+.form-right-decoration:before {
+  top: -20px;
+  right: 0;
+}
+.form-right-decoration:after {
+  top: 20px;
+  right: 10px;
+}
+.circle {
+  position: absolute;
+  bottom: 80px;
+  left: -55px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+}
+.form-inner {
+  padding: 50px;
+}
+.text_com{
+  height: 300px;
+}
+.form-inner input, .form-inner textarea {
+  margin-top: 10px;
+  display: block;
+  width: 215%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #E9EFF6;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.form-inner input[type="submit"] {
+  margin-top: 30px;
+  background: rgb(7, 85, 253);
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.7s; /* Добавляем плавный переход */
+  cursor: pointer; /* Устанавливаем курсор на палец */
+}
+
+.form-inner input[type="submit"]:hover {
+  background: #00f36e;
+
+}
+
+.form-inner textarea {
+  resize: none;
+}
+.form-inner h3 {
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #010101;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+.h3_com{
+  text-align: center;
+}
+.error-message {
+  color: red;
+  font-size: 20px;
+}
+
+
 
 
 

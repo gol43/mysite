@@ -1,6 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
-{% load thumbnail %}
 {% block content %}
     <div class="container">
         <main class="lists">
@@ -10,7 +8,7 @@
                     <!-- Верхняя часть -->
                     <div class="list__top">
                         <!-- Изображение-ссылка товара -->
-                        <a href="#" class="list__image">
+                        <a href="{% url 'products:products_detail' products.pk %}" class="list__image">
                             <img src="{{ products.image.url }}">
                         </a>
                     </div>
@@ -18,10 +16,10 @@
                     <div class="list__bottom">
                         <!-- Цены на товар (с учетом скидки и без)-->
                         <div class="list__prices">
-                            <div class="list__price">{{products.cost}}</div>
+                            <div class="list__price">Цена: {{products.cost}} руб.</div>
                         </div>
                         <!-- Ссылка-название товара -->
-                        <a href="#" class="list__title">
+                        <a href="{% url 'products:products_detail' products.pk %}" class="list__title">
                             {{products.name}}
                         </a>
                         <!-- Кнопка добавить в корзину -->
