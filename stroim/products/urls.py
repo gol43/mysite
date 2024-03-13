@@ -6,6 +6,5 @@ app_name = 'products'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    
-
+    path('profile/<str:username>/', views.profile, name='profile'),
 ]

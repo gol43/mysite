@@ -1,34 +1,36 @@
-<div class="logo-container">
-    <a href="ссылка на главную страницу сайта">
-      <img class="header-logo" src="img/logo.png" alt="лого">
-    </a>
-    <div>
-      <h1 class="name-h1">
-        КомфортСтрой
-      </h1>
-    </div>
+{% load static %}
+<div class='img-logo'>
+  <a href="{% url 'products:index' %}">
+  <img class="logo-scale" src={% static 'img/logo.png' %} width="90" height="85" alt="Логотип сайт">
+  </a>
 </div>
-<div class="container">
-  <a style="margin-right:75px;" class="navigation" href="main-menu">Главная</a>
-  <a class="navigation" href="main-menu">О нас</a>
-</div>
-<nav>
-  <ul class="menu">
-    <li> <a style="transition: 0.5s;" class="navigation" href="">Каталог</a>
+<a class='logo' href="{% url 'products:index' %}"><h1>СтройБалт</h1></a>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<form class='poisk' action="/search" method="GET">
+  <input type="search">
+  <i class="fa fa-search"></i>
+</form>
+<nav class="catalog">
+  <ul>
+    <li class="text-catalog"> <a href="#">Каталог</a>
       <ul>
-      <li><a class="nav-item" href="#">Товары для дома</a></li>
-      <li><a class="nav-item" href="#">Товары для сада</a></li>
-      <li><a class="nav-item" href="#">Электротовары</a></li>
-      </ul>
+        <li><a href="#">Инструменты</a></li>
+        <li><a href="#">Краска</a></li>
+        <li><a href="#">Электротовары</a></li>
+        <li><a href="#">Болты</a></li>
+        <li><a href="#">Всё для сада</a></li>
+        <li><a href="#">Обои</a></li>
+      </ul> 
     </li>
-  </ul> 
+  </ul>
 </nav>
-<div class="container-2">
-  <form class="search-form form-fix" action="/search" method="GET">
-    <input type="search" name="q" placeholder="Поиск товара"> 
-    <button type="submit">Искать</button>
-  </form>
-  <div style="margin-left: 130%;"class="authorization">
-    <a style="box-shadow: none;" class="navigation" href="">Войти</a>
-  </div>
+{% if user.is_authenticated %}
+<div class="auth auth-fix"><a href="{% url 'products:profile' user.username %}"> {{ user.username }}</a>
 </div>
+<a href="{% url 'products:profile' user.username %}">
+<img style="margin-right: 40px;" class="img-logo" src="{% static 'img/profile.png' %}" width="60" height="50" alt='Иконка профиля'>
+</a>
+{% else %}
+<div style="border-right: 2px black solid;" class="auth auth-fix" ><a href="{% url 'users:login' %}">Войти</a></div>
+<div class="auth"><a href="{% url 'users:signup' %}">Регистрация</a></div>
+{% endif %}
