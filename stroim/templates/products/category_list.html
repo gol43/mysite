@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {%block content%}
+    <div class="card-text">{{category_name.name}}</div>
     <div class="container">
         <main class="lists">
             {% for products in page_obj %}
@@ -23,7 +24,6 @@
                                 {{products.name}}
                             </a>
                             <!-- Кнопка добавить в корзину -->
-                            <button class="list__add">В корзину</button>
                         </div>
                     </div>
             {% endfor %}

@@ -657,9 +657,29 @@ margin-left: 225%;
   transition: 0.2s;
 }
 
+.list__remove {
+  position: absolute; /* Добавлено */
+  bottom: 0; /* Добавлено */
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #0a74f5;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #131adc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 .list__add:hover {
   border: 2px solid #131adc;
   background-color: #0a74f5;
+  color: #fff;
+}
+.list__remove:hover {
+  border: 2px solid #70c05b;
+  background-color: #70c05b;
   color: #fff;
 }
 
@@ -774,6 +794,16 @@ margin-left: 225%;
   margin-bottom: 10px;
   font-weight: 100;
 }
+.pro_category {
+  color: black; /* Устанавливаем черный цвет текста */
+}
+
+.pro_category a {
+  color: black; /* Устанавливаем черный цвет текста ссылки */
+  text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
+
+
 .opi {
   font-size: 40px;
   margin-left: 50px;
@@ -994,6 +1024,27 @@ ol {
 .error-message {
   color: red;
   font-size: 20px;
+}
+.button-cart {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #70c05b;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button-cart:hover {
+  border: 2px solid #70c05b;
+  background-color: #70c05b;
+  color: #fff;
 }
 
 

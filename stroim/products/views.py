@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages  # Импортируем messages для вывода сообщений об ошибках
-from .models import Product, Category
+from .models import Product, Category, ShoppingCart
+from users.models import User
 from .utils import paginate
 from .forms import CommentForm
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 PAGE_FOR_LIST = 8
 
@@ -21,10 +24,10 @@ def products_list(request):
 
 def products_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    title = 'Пост'
+    in_cart = ShoppingCart.objects.filter(user=request.user, product=product).exists()
     context = {
         'product': product,
-        'title': title,
+        'in_cart': in_cart,
     }
     return render(request, 'products/products_detail.html', context)
 
@@ -63,6 +66,41 @@ def category_list(request, category_id):
     page_obj = paginate(request, product, PAGE_FOR_LIST)
     context = {
         'page_obj': page_obj,
+        'category_name': category_name,
     }
     return render(request, 'products/category_list.html', context)
 
+
+def profile(request, username):
+    title = "Профиль"
+    user = get_object_or_404(User, username=username)
+    card = ShoppingCart.objects.filter(user=user.id)
+    card_products = card.all()
+    count_products = card_products.count()
+    page_obj = paginate(request, card_products, PAGE_FOR_LIST)
+
+    context =  {
+        'page_obj': page_obj,
+    }
+    return render(request, 'products/profile.html', context)
+
+
+@login_required
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    ShoppingCart.objects.create(user=request.user, product=product)
+    return redirect('products:products_detail', product_id=product_id)
+
+
+@login_required
+def remove_from_cart(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    ShoppingCart.objects.filter(user=request.user, product=product).delete()
+    return redirect('products:products_detail', product_id=product_id)
+
+
+@login_required
+def remove_from_cart_profile(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    ShoppingCart.objects.filter(user=request.user, product=product).delete()
+    return redirect('products:profile', username=request.user.username)

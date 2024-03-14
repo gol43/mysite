@@ -1,25 +1,37 @@
 {% load static %}
-<header>
-  <img class='img-logo' src="{% static "img/logo.png"%}" width="90" height="85" alt="Логотип сайта">
-  <a class='logo' href="{% url 'products:index' %}"><h1>СтройБалт</h1></a>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  <form class='poisk' action="">
-    <input type="search">
-    <i class="fa fa-search"></i>
-  </form>
-
-  <nav class="catalog">
-    <ul>
-      <li class="text-catalog"> <a href="#">Каталог</a>
-        <ul>
-          <li><a href="#">Товары для дома</a></li>
-          <li><a href="#">Товары для сада</a></li>
-          <li><a href="#">Электротовары</a></li>
-        </ul> 
-      </li>
-    </ul>
-  </nav>
-
-  <div class="auth"><a href="#">Войти</a></div>
-
-</header>
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<div class='img-logo'>
+  <a href="{% url 'products:index' %}">
+  <img class="logo-scale" src={% static 'img/logo.png' %} width="90" height="85" alt="Логотип сайт">
+  </a>
+</div>
+<a class='logo' href="{% url 'products:index' %}"><h1>СтройБалт</h1></a>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<form class='poisk' action="/search" method="GET">
+  <input type="search">
+  <i class="fa fa-search"></i>
+</form>
+<nav class="catalog">
+  <ul>
+    <li class="text-catalog"> <a href="#">Каталог</a>
+      <ul>
+        <li><a href="#">Инструменты</a></li>
+        <li><a href="#">Краска</a></li>
+        <li><a href="#">Электротовары</a></li>
+        <li><a href="#">Болты</a></li>
+        <li><a href="#">Всё для сада</a></li>
+        <li><a href="#">Обои</a></li>
+      </ul> 
+    </li>
+  </ul>
+</nav>
+{% if user.is_authenticated %}
+<div class="auth auth-fix"><a href="{% url 'products:profile' user.username %}"> {{ user.username }}</a>
+</div>
+<a href="{% url 'products:profile' user.username %}">
+<img style="margin-right: 40px;" class="img-logo" src="{% static 'img/profile.png' %}" width="60" height="50" alt='Иконка профиля'>
+</a>
+{% else %}
+<div style="border-right: 2px black solid;" class="auth auth-fix" ><a href="{% url 'users:login' %}">Войти</a></div>
+<div class="auth"><a href="{% url 'users:signup' %}">Регистрация</a></div>
+{% endif %}

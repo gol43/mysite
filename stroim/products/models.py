@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
-
-User = get_user_model()
+from users.models import User
 
 
 class Category(models.Model):
@@ -23,16 +21,19 @@ class Product(models.Model):
     amount = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.name}'
+
 
 class ShoppingCart(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='shopping_cart')
+        related_name='shopping_cart_user')
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
-        related_name='shopping_cart')
+        related_name='shopping_cart_product')
 
     def __str__(self):
         return f'{self.user} добавил "{self.product}" в список покупок'

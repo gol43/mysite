@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <main class="lists">
+        {% for cart in page_obj %}
+        <div class="list">
+            <!-- Карточка товара -->
+            <!-- Верхняя часть -->
+            <div class="list__top">
+                <!-- Изображение-ссылка товара -->
+                <a href="{% url 'products:products_detail' cart.product.pk %}" class="list__image">
+                    <img src="{{ cart.product.image.url }}">
+                </a>
+            </div>
+            <!-- Нижняя часть -->
+            <div class="list__bottom">
+                <!-- Цены на товар (с учетом скидки и без)-->
+                <div class="list__prices">
+                    <div class="list__price">Цена: {{cart.product.cost}} руб.</div>
+                </div>
+                <!-- Ссылка-название товара -->
+                <a href="{% url 'products:products_detail' cart.product.pk %}" class="list__title">
+                    {{cart.product.name}}
+                </a>
+                <!-- Кнопка удалить из корзины -->
+                <a href="{% url 'products:remove_from_cart_profile' cart.product.pk %}" class="list__remove">Убрать из корзины</a>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+    <!-- Pagination -->
+    {% include 'products/includes/paginator.html' %}
+</div>
+{% endblock %}
